@@ -7,6 +7,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FeePortalComponent } from './fee-portal/fee-portal.component';
 import { AttendanceSheetComponent } from './attendance-sheet/attendance-sheet.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 /**
  * Routes
@@ -18,6 +19,10 @@ const routes: Routes = [
     redirectTo: '/attendance',
     pathMatch: 'full'
   },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
@@ -25,7 +30,8 @@ const routes: Routes = [
     AppComponent,
     ToolbarComponent,
     FeePortalComponent,
-    AttendanceSheetComponent
+    AttendanceSheetComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
